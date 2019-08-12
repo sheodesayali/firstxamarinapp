@@ -26,6 +26,8 @@ namespace FirstXamarinApp.Droid
             LoadApplication(new App());
             AppCenter.Start("b6d4a115-b1b8-4ae5-87e3-f35072aec9b0",
                    typeof(Analytics), typeof(Crashes));
+            Analytics.TrackEvent("Test Event");
+            
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
