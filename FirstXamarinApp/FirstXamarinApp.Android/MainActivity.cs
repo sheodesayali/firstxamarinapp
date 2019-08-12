@@ -1,11 +1,13 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace FirstXamarinApp.Droid
 {
@@ -22,6 +24,8 @@ namespace FirstXamarinApp.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+            AppCenter.Start("b6d4a115-b1b8-4ae5-87e3-f35072aec9b0",
+                   typeof(Analytics), typeof(Crashes));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
