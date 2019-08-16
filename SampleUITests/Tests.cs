@@ -30,7 +30,6 @@ namespace SampleUITests
         [Test]
         public void WelcomeTextIsDisplayed()
         {
-            //app.Repl();
             AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
             app.Screenshot("Welcome screen.");
             Assert.IsTrue(results.Any());
@@ -39,7 +38,12 @@ namespace SampleUITests
         [Test]
         public void TwoClicks()
         {
+            
+            app.Tap(c => c.Marked("Click Me!"));
+            app.Tap(c => c.Class("ButtonRenderer"));
             //app.Repl();
+            //AppResult[] results = app.WaitForElement(c => c.Marked("You clicked 2 times."));
+            Assert.AreEqual("You clicked 2 times.",app.Query(c => c.Class("ButtonRenderer")).First().Text);
         }
 
     }

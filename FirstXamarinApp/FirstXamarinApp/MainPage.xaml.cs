@@ -16,8 +16,7 @@ namespace FirstXamarinApp
         int count = 0;
         public MainPage()
         {
-            InitializeComponent();
-            
+            InitializeComponent(); 
         }
         void Button_Clicked(object sender, System.EventArgs e)
         {
